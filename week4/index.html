@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="mt-3">
+        Calculator
+    </div>
+    <div class="mt-3">
+        <input type="number" name="first_num" class="form-control">
+    </div>
+    <div class="mt-3">
+        <select name="operator" class="form-control">
+            <option value="add">+</option>
+            <option value="sun">-</option>
+            <option value="mul">*</option>
+            <option value="div">/</option>
+        </select>
+    </div>
+    <div class="mt-3">
+        <input type="number" name="second_num" class="form-control">
+    </div>
+    <div class="mt-3">
+        <button class="btn btn-info text-white" type="submit">Calculator</button>
+    </div>
+    <div class="mt-3">
+        <p>Result : <span id="result" style="color: red;"></span></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        const first_num = document.querySelector('input[name="first_num"]');
+        const second_num = document.querySelector('input[name="second_num"]');
+        const operator = document.querySelector('select[name="operator"]');
+        const result = document.querySelector('#result');
+        const btn = document.querySelector('button[type="submit"]');
+
+        btn.addEventListener('click', function() {
+            const first_num_v = first_num.value;
+            const second_num_v = second_num.value;
+            const operator_num_v = operator.value;
+
+            if (first_num_v == '' || second_num_v == '') {
+                alert('Please enter number in Input Box');
+                return;
+            }
+
+            if (operator_num_v == 'add') {
+                result.innerHTML = (parseInt(first_num_v) + parseInt(second_num_v));
+                
+            } else if (operator_num_v == 'sun') {
+                result.innerHTML = (parseInt(first_num_v) - parseInt(second_num_v));
+
+            } else if (operator_num_v == 'mul') {
+                result.innerHTML = (parseInt(first_num_v) * parseInt(second_num_v));
+
+            } else if (operator_num_v == 'div') {
+                result.innerHTML = (parseInt(first_num_v) / parseInt(second_num_v));
+
+            }
+
+        });
+    </script>
+</body>
+</html>
