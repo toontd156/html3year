@@ -23,9 +23,17 @@ loginBtn.addEventListener('click', () => {
     login(username.value, password.value)
         .then(user => {
             if (user.role === 1) {
-                window.location.href = 'admin.html'
+                Swal.fire(
+                  'Welcome Admin',
+                  'You clicked the button!',
+                  'success'
+                )
             } else if (user.role === 2) {
-                window.location.href = 'user.html'
+                Swal.fire(
+                  'Welcome',
+                  'You clicked the button!',
+                  'success'
+                )
             }
         })
         .catch(err => {
