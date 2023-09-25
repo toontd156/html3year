@@ -16,7 +16,7 @@ function loadData() {
             </td>
             <td>${assets[i].id}</td>
             <td>${assets[i].name}</td>
-            <td>${assets[i].status}</td>
+            <td>${assets[i].status == 1 ? 'Nomal' : 'Last' }</td>
         `
         tableBody.append(row)
     }
