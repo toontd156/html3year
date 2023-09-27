@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz1</title>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <script src="bootstrap.bundle.min.js"></script>
+    </head>
+
+    <body>
+        <div class="row border border-primary ">
+            <div class="col bg-dark text-white">
+                <h1>Step 1:Choose Products</h1>
+                <div class="col">
+                    <input type="checkbox" name="selecip" id="Ip15" class="form-input-checked"> Iphone 15 (32,900 baht)
+                </div>
+                <div>
+                    <input type="checkbox" name="selecip" id="Ip15Pro" class="form-input-checked"> Iphone 15 Pro(41,900 baht)
+                </div>
+                <div>
+                    <input type="checkbox" name="selecip" id="Ip15ProMax" class="form-input-checked"> Iphone 15 Max (48,900 baht)
+                </div>
+            </div>
+            <div class="col bg-secondary">
+                <h1 class="text-white">Step 2: Choose payment method</h1>
+                <select name="payment" class="form-control">
+                    <option value="1">Cash (-20%)</option>
+                    <option value="2">Credit (+20%)</option>
+                </select>
+            </div>
+            <div class="col bg-light">
+                <h1>Step 3: Payment</h1>
+                <div class="text-center text-primary">
+                    <p id="Selectcount"></p>
+                    <p id="Price"></p>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-success text-center" type="submit">Pay</button>
+                </div>
+            </div>
+        </div>
+     
+    <script>
+        const ip15 = document.querySelector('input[id="Ip15"]')    
+        const ip15P = document.querySelector('input[id="Ip15Pro"]')    
+        const ip15M = document.querySelector('input[id="Ip15ProMax"]')    
+        const paymentSelect = document.querySelector('select[name="payment"]');
+        const btn = document.querySelector('button[type="submit"]');
+        const selectCount = document.querySelector('#Selectcount')
+        const price = document.querySelector('#Price')
+        btn.addEventListener('click', function() {
+            if (!ip15.checked && !ip15P.checked && !ip15M.checked ) {
+                alert('Please select at least a product')
+                return
+            }
+            let totalprice = 0;
+            let totalcountSelect = 0;
+            if (ip15.checked) {
+                totalprice = totalprice + 32900
+                totalcountSelect = totalcountSelect + 1
+            }
+            if (ip15P.checked) {
+                totalprice = totalprice + 41900
+                totalcountSelect = totalcountSelect + 1
+            } 
+            if (ip15M.checked) {
+                totalprice = totalprice + 48900
+                totalcountSelect = totalcountSelect + 1
+
+            } 
+
+            if (paymentSelect.value == '1') {
+                totalprice = totalprice - (0.2 * totalprice)
+            } else if (paymentSelect.value == '2') {
+                totalprice = totalprice + (0.2 * totalprice)
+            }
+
+            if (totalprice > 0.5) {
+                totalprice = Math.ceil(totalprice)
+            } else {
+                totalprice = Math.floor(totalprice)
+            }
+            selectCount.innerHTML = 'You select ' + totalcountSelect + ' product(s)';
+            price.innerHTML = 'Total price = ' + totalprice +' Baht';
+        })
+
+    </script>
+    </body>
+</html>
