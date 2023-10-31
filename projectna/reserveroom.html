@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reserve a room</title>
+        <link rel="stylesheet" href="/asset/bootstrap.min.css">
+        <script src="/asset/bootstrap.bundle.min.js"></script>
+        <style>
+            * {
+                font-family: 'Youtube Sans', sans-serif;
+            }
+            .d-flex, .flex-row{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .btn-success {
+                width: 30%;
+            }
+            .fixed-bottom {
+                background-color: #96B6C5;
+            }
+        </style>
+    </head>
+    <body>
+        <nav
+            class="navbar navbar-expand-lg navbar-light bg-light static-top shadow-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img
+                        src="/M-removebg-preview_1.png"
+                        alt="..." height="36">
+                    จองห้อง
+                </a>
+                <div class="div">
+                </div>
+                <div class="collapse navbar-collapse"
+                    id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto text-color-dark">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="#">กลับ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container mt-5">
+            <form id="submit-detail">
+                <div class="row">
+                    <div class="col">
+                        <div class="d-flex flex-row">
+                            <div
+                                class="col-1 d-flex justify-content-center col-6 col-sm-4 col-md-3 ">
+                                วันที่
+                            </div>
+                            <div class="col-6">
+                                <input type="date" id="checkdate"
+                                    class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="d-flex flex-row">
+                            <div class="col-1 d-flex justify-content-center">
+                                ห้อง
+                            </div>
+                            <div class="col-6">
+                                <select name id="selectroom"
+                                    class="form-control">
+                                    <option value="1">C1 111</option>
+                                    <option value="2">C2 222</option>
+                                    <option value="3">C3 333</option>
+                                    <option value="4">C4 444</option>
+                                </select>
+                            </div>
+                            <div
+                                class="col d-flex justify-content-center text-secondary">
+                                ความจุ 12 คน
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        <div class="d-flex flex-row">
+                            <div class="col-1 d-flex justify-content-center">
+                                เวลา
+                            </div>
+                            <div class="col-6">
+
+                                <select name id="selecttime"
+                                    class="form-control">
+                                    <option value="1">08:00 - 10:00</option>
+                                    <option value="2">10:00 - 12:00</option>
+                                    <option value="3">13:00 - 15:00</option>
+                                    <option value="4">15:00 - 17:00</option>
+                                </select>
+                            </div>
+                            <div
+                                class="col d-flex justify-content-center text-secondary">
+                                น.
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col ">
+                        <div class="d-flex flex-row">
+                            <div class="col-2 d-flex justify-content-center">
+                                จำนวนเวลา
+                            </div>
+                            <div class="col-6">
+                                <input type="number" id="timecount"
+                                    class="form-control" min="1">
+                            </div>
+                            <div
+                                class="col d-flex justify-content-center text-secondary">
+                                ชม
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <div class="d-flex flex-row">
+                            <div class="col-2 text-center">
+                                จำนวนคน
+                            </div>
+                            <div class="col-6">
+                                <input type="number" id="countpeople"
+                                    class="form-control" min="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        ความต้องการเพิ่มเติม
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        <input type="text" class="form-control p-4"
+                            id="itemaddon" placeholder="อยากได้อะไรเพิ่มเติม">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col text-center">
+                        <button type="submit" class="btn btn-success btn-block"
+                            id="susccess">ยืนยัน</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <footer class="fixed-bottom">
+            <div class="container-fluid mt-5">
+                <div class="row">
+                    <div class="col">
+                        <p class="text-light">ติดต่อเรา</p>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col">
+                        <p class="text-light">โทร: 0999999999</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-light">อีเมล์ : Meetingroom@mfu.ac.th</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="reserveroom.js"></script>
+    </body>
+</html>
