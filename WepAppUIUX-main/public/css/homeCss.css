@@ -1,0 +1,285 @@
+a{
+    text-decoration: none;
+}
+
+header{
+    width: 100vw;
+    height: 50vh;
+    background-image: url('/public/img/11111111111111111111111111111111.jpg');
+    background-position: bottom;
+    background-size: cover;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.header-content{
+    margin-bottom: 150px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.header-content h2 {
+    font-size: 5vmin;
+}
+
+.line {
+    width: 80px;
+    height: 4px;
+    background:rgb(251, 33, 33);
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+.header-content h1 {
+    font-size: 7vmin;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.ctn{
+    font-size: 2vmin;
+    padding: 8px 50px ;
+    background: rgb(251, 33, 33);
+    border-radius: 30px;
+    color:  rgb(255, 255, 255);
+}
+
+.logo-image{
+    width:70px;
+    height: 46px;
+    /* border-radius: 30%; */
+    overflow: hidden;
+    margin-top: -6px;
+}
+
+
+.ctn3{
+    font-size: 2vmin;
+    padding: 8px 30px ;
+    background: rgb(251, 33, 33);
+    border-radius: 30px;
+    color:  rgb(255, 255, 255);
+    
+}
+
+.ctn2{
+    font-size: 2vmin;
+    padding: 12px 30px ;
+    background: rgba(39, 55, 85, 1);
+    border-radius: 30px;
+    color:  rgb(255, 255, 255);
+}
+
+.menu-btn{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 60px;
+    cursor: pointer;
+    display: none;
+}
+
+
+.active {
+    color:rgb(251, 33, 33);
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+ul{
+    list-style: none;
+}
+
+body, html{
+    overflow-x: hidden;
+
+}
+
+.footer{
+    width: 100%;
+    min-height: 100px;
+    padding: 20px 80px;
+    margin: 0;
+    background: rgb(6, 116, 163);
+    text-align: center;
+}
+.footer p {
+    color: aliceblue;
+    margin: 20px auto;
+   
+}
+
+/* Navbar */
+.navbar{
+    top: 0;
+    left: 0;
+    /* position: absolute; */
+    display: flex;
+    width: 100%;
+    justify-content:  space-between;
+    padding: 20px;
+    color:rgba(39, 55, 85, 1);
+}
+
+.nav-links{
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+
+/*  Events */
+section{
+    width: 80%;
+    margin: 80px auto;
+}
+.title{
+    text-align: center;
+    font-size: 4vmin;
+    color: rgba(39, 55, 85, 1);
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.row .col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.events .row {
+    margin-top: 50px;
+}
+
+h4 {
+    font-size: 3vmin;
+    color: rgba(39, 55, 85, 1);
+    margin: 20px auto;
+}
+
+p{
+    color:#7c7c7c ;
+    padding: 0px 40px;
+}
+
+#vacancy{
+    width: 150px;
+    height: 50px;    
+    flex-shrink: 0;
+    border-radius: 50px;   
+     
+}
+#Usage{
+    width: 293px;
+    height: 50px;
+    flex-shrink: 0;
+   border-radius: 50px;
+   background-color: rgb(198, 160, 22);
+   
+}
+#room{
+    font-size: 3vmin;
+    color: rgb(47, 154, 11); 
+}
+
+#inuse{
+    font-size: 3vmin;
+    color: rgb(198, 160, 22);
+   
+}
+#Unavailable{
+    font-size: 3vmin;
+    color: rgb(251, 33, 33);
+    
+}
+.search-container {
+    width: 100%;
+    display: flex;
+    background-color: rgb(210, 213, 220);
+    align-items: center;
+    justify-content: center;
+    border-radius: 60px;
+    padding: 10px 40px;
+  }
+  
+  #search-bar {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 23px;
+    font-size: 2vmin;
+    color: #cac7ff;
+  }
+  
+  button {
+    background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+
+::placeholder{
+    color: #0b0b0b;
+}
+
+.search-bar button img {
+    width: 30px;
+    height: 30px;
+}
+.search-bar button{
+    border: 0;
+    border-radius: 50%;
+    width: 60px;
+    background: rgb(210, 213, 220);
+    cursor: p;
+}
+
+
+
+/* Mobile device */
+@media only screen and (max-width:850px) {
+    .menu-btn{
+        display: block;
+    }
+    .navbar{
+        padding: 0;
+    }
+    .logo-image{
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+    .nav-links{
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        background-color: rgb(6, 116, 163);
+        margin-top: -900px;
+        transition: all 0.5s ease;
+    }
+    .mobile-menu{
+        margin-top: 0px;
+        border-bottom-right-radius: 30%;
+    }
+    .nav-links li{
+        margin: 30px auto;
+    }
+    
+}

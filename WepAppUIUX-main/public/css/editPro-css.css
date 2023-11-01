@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Header */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 100px;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.navbar-back{
+    text-decoration: none;
+    color: black;
+   
+}
+
+.logo {
+    text-align: center;
+  }
+
+.logoLog{
+    display: inline-block;
+    vertical-align: middle;
+}
+/*  */
+
+/* content */
+.content{
+    margin: auto;
+    margin-top: 10rem;
+    display: table;
+    height: 616px;
+  
+    display: flex;
+    flex-direction: row;
+}
+.edit{
+    
+    display: flex;
+    flex-direction: row;
+}
+input{
+    border-color: none;
+}
