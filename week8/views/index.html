@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="/public/bootstrap.min.css">
+        <script src="/public/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome</h1>
+            <button class="btn btn-primary">ok</button>
+        </div>
+        
+        <script>
+        const button = document.querySelector('button');
+        button.addEventListener('click', async () => {
+            // fetch('/now')
+            //     .then(function (res){
+            //         if (res.ok) {
+            //             console.log(res);
+            //             return res.text();
+            //         } else {
+            //             throw new Error('Something went wrong');
+            //         }
+            //     }
+            // ).then(function (data) {
+            //     document.querySelector('h1').innerText = data;
+            // }).catch(function (err) {
+            //     console.log(err);
+            // });
+            try {
+                const req =  await fetch('/now');
+                if (!req.ok) {
+                    throw new Error('Something went wrong');
+                }
+                const data = await req.text();
+                document.querySelector('h1').innerText = data;
+            } catch (err) {
+                console.log(err);
+            }
+           
+        });
+    </script>
+    </body>
+</html>
