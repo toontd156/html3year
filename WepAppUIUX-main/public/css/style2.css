@@ -26,6 +26,10 @@ body {
 .container {
   position: relative;
   width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  
 }
 
 /* =============== Navigation ================ */
@@ -36,7 +40,7 @@ body {
 
 .navigation {
   position: fixed;
-  width: 300px;
+  width: 20%;
   height: 100%;
   background: var(--sky);
   border-left: 10px solid var(--sky);
@@ -44,11 +48,9 @@ body {
   overflow: hidden;
 }
 .navigation.active {
-  width: 80px;
 }
 
 .navigation ul {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -266,25 +268,47 @@ body {
 
 /* ================== Order Details List ============== */
 .details {
-  position: relative;
-  width: 100%;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 30px;
+  width: 98%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  
+  margin: auto;
   /* margin-top: 10px; */
-}
-
-.details .recentOrders {
-  position: relative;
-  display: grid;
-  min-height: 500px;
-  background: var(--white);
   padding: 20px;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
 }
 
+/* .details {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+} */
+.recentOrders {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin: auto;
+  flex-direction: column;
+  background-color: red;
+}
+/* .recentOrders {
+  display: flex;
+  flex-direction: column;
+
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+} */
 .details .cardHeader {
   display: flex;
   justify-content: space-between;
@@ -491,6 +515,6 @@ body {
   }
 }
 
-/* .ChooseFire{
-    
-} */
+.ChooseFire{
+  padding: 5px;
+}
