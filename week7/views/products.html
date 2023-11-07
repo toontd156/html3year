@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product</title>
+        <link rel="stylesheet" href="/public/bootstrap.min.css">
+        <script src="/public/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <h1>MFU SHOP</h1>
+            <div class="d-flex flex-wrap" id="products">
+                <!-- <div class="card me-3 mt-3">
+                <div class="card-body">
+                    <img src="/public/img/shirt.png" alt="product">
+                </div>
+            </div> -->
+            </div>
+        </div>
+
+        <script>
+
+const products = document.getElementById('products');
+fetch('http://127.0.0.1:9000/products')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(product => {
+            var card = document.createElement('div');
+            card.setAttribute('class', 'card mt-3 me-3');
+            card.innerHTML = `
+              <div class="card-body">
+                <img src="/public/img/${product.image}" >
+                <h4 class="card-title"> ${product.name} </h4>
+                <p class="card-text">${product.price} baht</p>
+                <button class="btn btn-primary">Add to Cart</button>
+              </h4>
+            `;
+            document.getElementById('products').appendChild(card);   
+            
+        }
+        );
+    })
+    .catch(error => console.error(error));
+    </script>
+    </body>
+</html>

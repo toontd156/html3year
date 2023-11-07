@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product</title>
+        <link rel="stylesheet" href="/public/bootstrap.min.css">
+        <script src="/public/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <h1>Admin</h1>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr><th>ID</th> <th>Image</th> <th>Action</th></tr>
+                </thead>
+                <tbody id="tbody">
+                    <!-- <tr><td>1</td><td><img src="" alt=""></td><td><button class="btn btn-danger">Delete</button></td></tr> -->
+                </tbody>
+            </table>
+        </div>
+        <script>
+            fetch('http://127.0.0.1:9000/products').then(response => response.json()).then(data => {
+                data.forEach(p => {
+                    var tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${p.id}</td>
+                        <td><img src="/public/img/${p.image}" alt=""></td>
+                        <td><button class="btn btn-danger" onclick="DeleteItem(${p.id})">Delete</button></td>
+                    `;
+                    document.getElementById('tbody').appendChild(tr);
+                })
+            })
+
+            function DeleteItem(id) {
+                fetch(`http://127.0.0.1:9000/products/${id}`, {
+                    method: 'DELETE'
+                }).then(response => response.json()).then(data => {
+                    window.location.reload();
+                })
+            }
+
+        </script>
+    </body>
+</html>
